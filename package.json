@@ -1,0 +1,40 @@
+{
+  "name": "video-hugo-npm",
+  "version": "0.1.0",
+  "description": "Setting up hugo to work with NPM modules",
+  "main": " ",
+  "scripts": {
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender",
+    "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender --buildFuture --buildDrafts",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --cleanDestinationDir --minify",
+    "start:dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender --renderToDisk  --cleanDestinationDir",
+    "start:prod": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender --renderToDisk  --cleanDestinationDir --minify --environment production",
+    "npm-check": "npm-check -u",
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/future-wd/video-hugo-npm"
+  },
+  "keywords": [
+    "npm",
+    "hugo",
+    "getting-started"
+  ],
+  "author": "Future Web Design",
+  "license": "ISC",
+  "devDependencies": {
+    "exec-bin": "^1.0.0",
+    "hugo-installer": "^3.1.0",
+    "npm-check": "^5.9.2"
+  },
+  "otherDependencies": {
+    "hugo": "0.89.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.2.3",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0"
+  }
+}
